@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var ToDo = mongoose.model('Todo', { 
+var Todo = mongoose.model('Todo', { 
     text: {
         type: String,
         required: true,
@@ -16,7 +16,7 @@ var ToDo = mongoose.model('Todo', {
         default: null    
     }
 });
-
+module.exports = { Todo };
 // var newTodo = new ToDo({
 //     text: 'Cook dinner'
 // });
@@ -25,6 +25,6 @@ var ToDo = mongoose.model('Todo', {
 //   .save()
 //   .then( doc => console.log('Saved todo', doc), err => console.log('Unable to save todo', err) );
 
-var anotherTodo = new ToDo({ text: '      some text     ' });
+// var anotherTodo = new ToDo({ text: '      some text     ' });
 
-anotherTodo.save().then( result => console.log(result) );
+// anotherTodo.save().then( result => console.log(result) );
