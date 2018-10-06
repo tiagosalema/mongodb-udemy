@@ -12,7 +12,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     .deleteMany({text: 'Eat lunch'})
     .then((result) => {
         console.log(result);
-    })
+    });
 
     // client.close();
 });
