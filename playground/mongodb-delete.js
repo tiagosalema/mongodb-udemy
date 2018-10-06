@@ -8,15 +8,11 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     const db = client.db('TodoApp');
     
     db
-    .collection('Users')
-    .find()
-    .toArray()
-    .then((doc) => {
-        console.log('aqui vão eles:');
-        doc.forEach(each => console.log(each.text));
-    }, (err) => {
-        console.log('Unable to fetch todos', err);
-    });
+    .collection('Todos')
+    .deleteMany({text: 'Eat lunch'})
+    .then((result) => {
+        console.log(result);
+    })
 
     // client.close();
 });

@@ -9,14 +9,18 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     
     db
     .collection('Users')
-    .find()
-    .toArray()
-    .then((doc) => {
-        console.log('aqui vão eles:');
-        doc.forEach(each => console.log(each.text));
-    }, (err) => {
-        console.log('Unable to fetch todos', err);
-    });
+    .findOneAndUpdate(
+        { _id: id('5bb788226663f80c307442f7') },
+        {
+          $inc: {
+            age: 1
+          } 
+        },
+        { returnOriginal: false }
+    )
+    .then((result) => {
+        console.log(result);
+    })
 
     // client.close();
 });
