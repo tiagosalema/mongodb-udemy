@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var ToDo = mongoose.model('Todo', {
+var ToDo = mongoose.model('Todo', { 
     text: {
         type: String,
         required: true,
